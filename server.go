@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
+	"os"
 )
 
 func main() {
@@ -11,4 +13,7 @@ func main() {
 
 func Hello(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("Hello Full Cycle"))
+	user := os.Getenv("USER-CONTEXT")
+	date := os.Getenv("DATE")
+	fmt.Fprintf(w, "User-Context: %s | %s", user, date)
 }
