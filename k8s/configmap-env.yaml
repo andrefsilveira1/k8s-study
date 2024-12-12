@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: goserver-env
+data:
+  USER-CONTEXT: "NEW-TEMP"
+  DATE: "12-12-2024"

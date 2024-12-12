@@ -12,7 +12,7 @@ func main() {
 }
 
 func Hello(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello Full Cycle"))
+	w.Write([]byte("Hello Full Cycle \n"))
 	user := os.Getenv("USER-CONTEXT")
 	date := os.Getenv("DATE")
 	fmt.Fprintf(w, "User-Context: %s | %s", user, date)

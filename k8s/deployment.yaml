@@ -16,9 +16,18 @@ spec:
     spec:
       containers:
         - name: goserver
-          image: "andrefsilveira1/k8s-go:v1"
-          env:
-            - name: USER-CONTEXT
-              value: "TEMP"
-            - name: DATE
-              value: "10-12-2024"
+          image: "andrefsilveira1/k8s-go:v2"
+          envFrom:
+            - configMapRef:
+                name: goserver-env
+          # env:
+          #   - name: USER-CONTEXT
+          #     valueFrom:
+          #       configMapKeyRef:
+          #         name: goserver-env
+          #         key: USER-CONTEXT
+          #   - name: DATE
+          #     valueFrom:
+          #       configMapKeyRef:
+          #         name: goserver-env
+          #         key: TEMP
